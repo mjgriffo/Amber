@@ -20,7 +20,7 @@ Home assistant device and service page.
 # 5) Amber integration for home assistant - https://www.home-assistant.io/integrations/amberelectric/
 The Amber integration provides the pricing information about the grid to determin when you should be limiting production 
 # 6) Import the  blueprint 
-Once you have met all the above rewuirement import the blueprint with this link
+Once you have met all the above rewuirement import the blueprint with this link https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://github.com/Ralphy140/Amber/blob/main/Export_Power_Limit_Blueprint.yaml
 
 
       
