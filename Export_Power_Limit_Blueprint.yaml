@@ -1,5 +1,5 @@
 blueprint:
-  name: SolarEdge Export Limit during negative feedin 
+  name: SolarEdge Export Limit during negative feed in 
   description: This will limit the export of your solaredge solar system if you are using Amber and have negative FiT, You must have the SolarEdge consumption monitor and installed and configured this package from HACS fist "https://github.com/binsentsu/home-assistant-solaredge-modbus"
   domain: automation
   input:
