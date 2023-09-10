@@ -6,7 +6,7 @@ blueprint:
     amber_fit_price:
       name: Amber FiT Price 
       description: The Amber price descriptor you wish to track. If in doubt, use
-        FiT Price.
+        Feed in Price.
       selector:
         entity:
           integration: amberelectric
@@ -15,14 +15,14 @@ blueprint:
           multiple: false
   source_url: https://github.com/Ralphy140/Amber/blob/main/Export_Power_Limit_Blueprint.yaml
 trigger:
- - platform: numeric_state
-   entity_id: !input amber_fit_price
-   below: 0
-   id: low
- - platform: numeric_state
-   entity_id: !input amber_fit_price
-   above: 0
-   id: high
+- platform: numeric_state
+  entity_id: !input amber_fit_price
+  below: 0
+  id: low
+- platform: numeric_state
+  entity_id: !input amber_fit_price
+  above: 0
+  id: high
 action:
   - choose:
       - conditions:
