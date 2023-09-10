@@ -23,11 +23,11 @@ trigger:
    hours: 0
    minutes: 0
    seconds: 0
-   platform: numeric_state
-   entity_id: !input amber_fit_price
-   above: 0
-   id: high
-   for:
+  platform: numeric_state
+  entity_id: !input amber_fit_price
+  above: 0
+  id: high
+  for:
      hours: 0
      minutes: 1
      seconds: 0
