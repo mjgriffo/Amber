@@ -13,15 +13,26 @@ blueprint:
           domain:
           - sensor
           multiple: false
+    lower_price_limit:
+      name: Export price limit
+      description: This lets you control what price you will stop ecporting power at
+      default: 0
+      selector:
+        number:
+          min: -0.1
+          max: 0.1
+          unit_of_measurement: $
+          mode: slider
+          step: 0.01
   source_url: https://github.com/Ralphy140/Amber/blob/main/Export_Power_Limit_Blueprint.yaml
 trigger:
 - platform: numeric_state
   entity_id: !input amber_fit_price
-  below: 0
+  below: !inout lower_price_limit
   id: low
 - platform: numeric_state
   entity_id: !input amber_fit_price
-  above: 0
+  above: !input lower_price_limit
   id: high
 action:
   - choose:
