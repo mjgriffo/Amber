@@ -1,6 +1,6 @@
 blueprint:
   name: SolarEdge Export Limit during negative feedin 
-  description: This will limit the export of your solaredge solar system if you are using Amber and have negative FiT, You must have the SolarEdge consumtion monitor and installed and configured this package from HACS fist 
+  description: This will limit the export of your solaredge solar system if you are using Amber and have negative FiT, You must have the SolarEdge consumption monitor and installed and configured this package from HACS fist 
   domain: automation
   input:
     amber_fit_price:
