@@ -28,7 +28,7 @@ blueprint:
 trigger:
 - platform: numeric_state
   entity_id: !input amber_fit_price
-  below: !inout lower_price_limit
+  below: !input lower_price_limit
   id: low
 - platform: numeric_state
   entity_id: !input amber_fit_price
