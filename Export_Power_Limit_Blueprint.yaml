@@ -15,7 +15,7 @@ blueprint:
           multiple: false
     lower_price_limit:
       name: Export price limit
-      description: This lets you control what price you will stop ecporting power at
+      description: This lets you control what price you will stop exporting power at
       default: 0
       selector:
         number:
