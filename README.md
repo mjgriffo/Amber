@@ -19,6 +19,8 @@ The instructions on how to get this working are in the link above. you will know
 Home assistant device and service page.
 # 5) Amber integration for home assistant - https://www.home-assistant.io/integrations/amberelectric/
 The Amber integration provides the pricing information about the grid to determin when you should be limiting production 
+# 6) Import the  blueprint 
+Once you have met all the above rewuirement import the blueprint with this link
 
 
       
