@@ -1,0 +1,58 @@
+blueprint:
+  name: SolarEdge Export Limit during negative feedin 
+  description: This will limit the export of your solaredge solar system if you are using Amber and have negative FiT, You must have the SolarEdge consumtion monitor and installed and configured this package from HACS fist 
+  domain: automation
+  input:
+    amber_price_descriptor:
+      name: Amber FiT Price 
+      description: The Amber price descriptor you wish to track. This should be sensor.<Your_address_here>_feed_in_price
+      selector:
+        entity:
+          integration: amberelectric
+          domain:
+          - sensor
+          multiple: false
+  source_url: https://github.com/amberelectric/public-api/blob/main/home-assistant/blueprints/light.yaml
+trigger:
+- platform: numeric_state
+  entity_id: !input amber_fit_price
+  below: 0
+  id: low
+  for:
+   hours: 0
+   minutes: 0
+   seconds: 0
+ - platform: numeric_state
+   entity_id: !input amber_fit_price
+   above: 0
+   id: high
+   for:
+     hours: 0
+     minutes: 1
+     seconds: 0
+action:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: low
+        sequence:
+          - service: select.select_option
+            data:
+              option: Direct Export Limitation
+            target:
+              entity_id: select.solaredge_export_control_mode
+          - service: number.set_value
+            data:
+              value: "0"
+            target:
+              entity_id: number.solaredge_export_control_site_limit
+
+      - conditions:
+          - condition: trigger
+            id: high
+        sequence:
+          - service: select.select_option
+            data:
+              option: Disabled
+            target:
+              entity_id: select.solaredge_export_control_mode
