@@ -5,7 +5,8 @@ blueprint:
   input:
     amber_fit_price:
       name: Amber FiT Price 
-      description: The Amber price descriptor you wish to track. This should be sensor.<Your_address_here>_feed_in_price
+      description: The Amber price descriptor you wish to track. If in doubt, use
+        FiT Price.
       selector:
         entity:
           integration: amberelectric
