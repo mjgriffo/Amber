@@ -12,7 +12,7 @@ blueprint:
           domain:
           - sensor
           multiple: false
-  source_url: https://github.com/amberelectric/public-api/blob/main/home-assistant/blueprints/light.yaml
+  source_url: https://github.com/Ralphy140/Amber/blob/main/Export_Power_Limit_Blueprint.yaml
 trigger:
 - platform: numeric_state
   entity_id: !input amber_fit_price
