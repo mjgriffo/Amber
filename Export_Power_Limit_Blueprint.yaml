@@ -15,22 +15,14 @@ blueprint:
           multiple: false
   source_url: https://github.com/Ralphy140/Amber/blob/main/Export_Power_Limit_Blueprint.yaml
 trigger:
-  platform: numeric_state
-  entity_id: !input amber_fit_price
-  below: 0
-  id: low
-  for:
-   hours: 0
-   minutes: 0
-   seconds: 0
-  platform: numeric_state
-  entity_id: !input amber_fit_price
-  above: 0
-  id: high
-  for:
-     hours: 0
-     minutes: 1
-     seconds: 0
+ - platform: numeric_state
+   entity_id: !input amber_fit_price
+   below: 0
+   id: low
+ - platform: numeric_state
+   entity_id: !input amber_fit_price
+   above: 0
+   id: high
 action:
   - choose:
       - conditions:
