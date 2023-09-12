@@ -47,7 +47,7 @@ action:
               entity_id: select.selocal_export_control_mode
           - service: number.set_value
             data:
-              value: "{{ (states('sensor.home_energy_gateway_load_power') | float) | abs }}"  + "{{ (states('sensor.tesla_gateway_battery_power') | float) | abs }}"
+              value: (states('sensor.home_energy_gateway_load_power') | float) | abs  + (states('sensor.tesla_gateway_battery_power') | float) | abs
             target:
               entity_id: number.selocal_export_control_site_limit
 
