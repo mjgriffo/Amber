@@ -47,7 +47,7 @@ action:
               entity_id: select.SELocal_export_control_mode
           - service: number.set_value
             data:
-              value: sensor.home_energy_gateway_load_power #"0"
+              value: "0"
             target:
               entity_id: number.SELocal_export_control_site_limit
 
