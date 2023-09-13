@@ -47,7 +47,7 @@ action:
               entity_id: select.selocal_export_control_mode
           - service: number.set_value
             data:
-              value: ((sensor.tesla_gateway_battery_power * -1) + sensor.tesla_gateway_load_power) * 1000
+              value: '0'
             target:
               entity_id: number.selocal_export_control_site_limit
 
